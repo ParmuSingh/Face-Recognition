@@ -1,10 +1,10 @@
 import cv2
 from PIL import Image
 
-face_cascade = cv2.CascadeClassifier('E:\workspace_py\OpenCV Cascades\haarcascades\haarcascades\haarcascade_frontalface_default.xml')
-eye_cascade = cv2.CascadeClassifier('E:\workspace_py\OpenCV Cascades\haarcascades\haarcascades\haarcascade_eye.xml')
+face_cascade = cv2.CascadeClassifier('.\OpenCV Cascades\haarcascades\haarcascades\haarcascade_frontalface_default.xml')
+eye_cascade = cv2.CascadeClassifier('.\OpenCV Cascades\haarcascades\haarcascades\haarcascade_eye.xml')
 
-video = cv2.VideoCapture("./prince.mp4")
+video = cv2.VideoCapture("./name of you video file for one person.mp4")
 
 i = 0
 while True:
@@ -26,7 +26,7 @@ while True:
 		roi = frame[y:y+h, x:x+w]
 		img = cv2.resize(roi, (256, 256))
 		#cv2.imshow('face', img)
-		cv2.imwrite('prince' + str(i) + '.jpg', img)
+		cv2.imwrite('name of person' + str(i) + '.jpg', img) # saving image of face.
 	i += 1
 	print(i)
 
