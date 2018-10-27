@@ -5,29 +5,28 @@ from pickle import dump
 
 data = []
 
-# lbl = [papa, mummy, prince]
+# lbl = [dad, mom, me]
 
+###############################################################################
+# THIS IS TO BE USED AFTER YOU HAVE EXTRACTED FACES FROM preprocess_script.py #
+###############################################################################
+
+# EXAMPLE OF WHAT IS TO BE REPLACED BY "use path to your data": "E:/Datasets!!/family_pics/dad/dad"
 
 # FACE 1
 for i in range(330):
 	try:
-		file = open("E:/Datasets!!/family_pics/papa/papa"+str(i)+".jpg", "rb")
-		# img = Image.open(file)
-		# img = np.asarray(img)
-		img = imread("E:/Datasets!!/family_pics/papa/papa"+str(i)+".jpg")
-		img = img/255.0
+		img = imread("use path to your data"+str(i)+".jpg")
+		img = img/255.0 # normalization
 		print("face imported.")
-		data.append([img, [1, 0, 0]])
+		data.append([img, [1, 0, 0]]) # one-hot encoding : [probability of dad, probability of mom, probability of me]
 	except:
 		print("image not a face.")
 
 # FACE 2
 for i in range(313):
 	try:
-		file = open("E:/Datasets!!/family_pics/mummy/mummy"+str(i)+".jpg", "rb")
-		# img = Image.open(file)
-		# img = np.asarray(img)
-		img = imread("E:/Datasets!!/family_pics/mummy/mummy"+str(i)+".jpg")
+		img = imread("use path to your data"+str(i)+".jpg")
 		img = img/255.0
 		print("face imported.")
 		data.append([img, [0, 1, 0]])
@@ -37,10 +36,7 @@ for i in range(313):
 # FACE 3
 for i in range(290):
 	try:
-		file = open("E:/Datasets!!/family_pics/prince/prince"+str(i)+".jpg", "rb")
-		# img = Image.open(file)
-		# img = np.asarray(img)
-		img = imread("E:/Datasets!!/family_pics/prince/prince"+str(i)+".jpg")
+		img = imread("use path to your data"+str(i)+".jpg")
 		img = img/255.0
 		print("face imported.")
 		data.append([img, [0, 0, 1]])
