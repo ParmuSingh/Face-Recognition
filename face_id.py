@@ -17,9 +17,9 @@ batch_size = 10
 
 # Version 1 - 50 epochs
 VERSION = 1 
-TRAIN_MODEL = False
+TRAIN_MODEL = True
 SAVE_MODEL = True
-RESTORE_MODEL = True
+RESTORE_MODEL = False
 
 # placeholders
 image = tf.placeholder('float', [None, 256, 256, 3])
